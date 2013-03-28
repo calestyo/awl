@@ -1,3 +1,11 @@
+2013-03-28  Christoph Anton Mitterer <mail@christoph.anton.mitterer.name>
+	* When the authentication has happened in the webserver, take the full
+	  content of the "REMOTE_USER" or "REDIRECT_REMOTE_USER" as user name
+	  and do not longer split of anything after any "@" character including
+	  the "@".
+	  As this behaviour was not really documented, it was actually a
+	  security issue, especially when DAViCal serves multiple vhosts.
+
 2013-03-25  Christoph Anton Mitterer <mail@christoph.anton.mitterer.name>
 	* In places where the CGI variable REMOTE_USER is read, support
 	  alternatively REDIRECT_REMOTE_USER, which is used by the Apache
